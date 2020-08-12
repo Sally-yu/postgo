@@ -1,13 +1,14 @@
 package main
 
 import (
+	. "ark/api"
+	"ark/db"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"strings"
 	"sync"
-	."ark/api"
 )
 
 var wg sync.WaitGroup
@@ -15,6 +16,7 @@ var wg sync.WaitGroup
 func main(){
 	gin.SetMode(gin.ReleaseMode)
 	wg.Add(1)
+	db.ConnectDB()
 	go Server()
 	wg.Wait()
 }
@@ -32,8 +34,9 @@ func Server(){
 func Handle(e *gin.Engine) *gin.Engine {
 	api := e.Group("api")
 	api.GET("/userlist", UserList)
-	//api.POST("/saveuser", SaveUser)
-
+	api.POST("/saveuser", SaveUser)
+	api.POST("/oneuser", OneUser)
+	api.POST("/deleteuser", DeleteUser)
 	return e
 }
 
