@@ -67,6 +67,6 @@ func OneUser(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
-		"user":user,
+		"user":    user,
 	})
 }
