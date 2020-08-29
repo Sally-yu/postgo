@@ -13,7 +13,7 @@ import (
 
 var wg sync.WaitGroup
 
-func main(){
+func main() {
 	gin.SetMode(gin.ReleaseMode)
 	wg.Add(1)
 	db.ConnectDB()
@@ -21,7 +21,7 @@ func main(){
 	wg.Wait()
 }
 
-func Server(){
+func Server() {
 	router := gin.Default()
 	router.Use(Cors())
 	router = Handle(router)
@@ -32,11 +32,39 @@ func Server(){
 
 //路由
 func Handle(e *gin.Engine) *gin.Engine {
+
+	e.GET("syncdb", SyncDB)
 	api := e.Group("api")
-	api.GET("/userlist", UserList)
+	api.GET("/alluser", AllUser)
 	api.POST("/saveuser", SaveUser)
-	api.POST("/oneuser", OneUser)
 	api.POST("/deleteuser", DeleteUser)
+	api.POST("/finduser", FindUser)
+	api.POST("/queryuser", QueryUser)
+
+	api.POST("/login", Login)
+
+	api.GET("/allrole", AllRole)
+	api.POST("/saverole", SaveRole)
+	api.POST("/findrole", FindRole)
+	api.POST("/queryrole", QueryRole)
+	api.POST("/deleterole", DeleteRole)
+
+	api.GET("/allcompany", AllCompanys)
+	api.POST("/savecompany", SaveCompany)
+	api.POST("/findcompany", FindCompany)
+	api.POST("/querycompany", QueryCompany)
+	api.POST("/findparentcompany", FindParentCompany)
+	api.POST("/findchildrencompany", FindChildrenCompany)
+	api.POST("/deletecompany", DeleteCompany)
+
+	api.GET("/alldepartment", AllDeparts)
+	api.POST("/savedepartment", SaveDepart)
+	api.POST("/finddepartment", FindDepart)
+	api.POST("/querydepartment", QueryDepart)
+	api.POST("/findparentdepartment", FindParentDepartment)
+	api.POST("/findchildrendepartment", FindChildrenDepartment)
+	api.POST("/deletedepartment", DeleteDepart)
+
 	return e
 }
 

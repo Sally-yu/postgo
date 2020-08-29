@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f24862-2e6e-4589-a502-5d01bf1087d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/git.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/company.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/depart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/company.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/depart.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/role.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/role.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +144,22 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:mydb@112.126.57.214" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:mydb@112.126.57.214" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@280d234c" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:mydb@112.126.57.214" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@7c10b1fa" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -161,38 +185,38 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="539" y="312" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.976@0.23.1680.976" timestamp="1596177884656" />
-    <state width="1638" height="319" key="GridCell.Tab.0.bottom" timestamp="1597315049731">
+    <state width="1638" height="257" key="GridCell.Tab.0.bottom" timestamp="1598707687946">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="319" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1597315049731" />
-    <state width="1638" height="319" key="GridCell.Tab.0.center" timestamp="1597315049729">
+    <state width="1638" height="257" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1598707687946" />
+    <state width="1638" height="257" key="GridCell.Tab.0.center" timestamp="1598707687941">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="319" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1597315049729" />
-    <state width="1638" height="319" key="GridCell.Tab.0.left" timestamp="1597315049729">
+    <state width="1638" height="257" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1598707687941" />
+    <state width="1638" height="257" key="GridCell.Tab.0.left" timestamp="1598707687940">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="319" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1597315049729" />
-    <state width="1638" height="319" key="GridCell.Tab.0.right" timestamp="1597315049731">
+    <state width="1638" height="257" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1598707687940" />
+    <state width="1638" height="257" key="GridCell.Tab.0.right" timestamp="1598707687946">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="319" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1597315049731" />
-    <state width="1638" height="296" key="GridCell.Tab.1.bottom" timestamp="1597315047571">
+    <state width="1638" height="257" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1598707687946" />
+    <state width="1638" height="257" key="GridCell.Tab.1.bottom" timestamp="1598707687791">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="296" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1597315047571" />
-    <state width="1638" height="296" key="GridCell.Tab.1.center" timestamp="1597315047570">
+    <state width="1638" height="257" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1598707687791" />
+    <state width="1638" height="257" key="GridCell.Tab.1.center" timestamp="1598707687790">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="296" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1597315047570" />
-    <state width="1638" height="296" key="GridCell.Tab.1.left" timestamp="1597315047570">
+    <state width="1638" height="257" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1598707687790" />
+    <state width="1638" height="257" key="GridCell.Tab.1.left" timestamp="1598707687790">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="296" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1597315047570" />
-    <state width="1638" height="296" key="GridCell.Tab.1.right" timestamp="1597315047571">
+    <state width="1638" height="257" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1598707687790" />
+    <state width="1638" height="257" key="GridCell.Tab.1.right" timestamp="1598707687791">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1638" height="296" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1597315047571" />
+    <state width="1638" height="257" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1598707687791" />
     <state width="239" height="539" key="HiddenNamespacesPopup" timestamp="1596420707709">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -201,18 +225,22 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="639" y="123" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1596523295577" />
-    <state x="678" y="377" width="348" height="268" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1597224558309">
+    <state x="678" y="377" width="348" height="268" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1598701281398">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="678" y="377" width="348" height="268" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1680.976@0.23.1680.976" timestamp="1597224558309" />
+    <state x="678" y="377" width="348" height="268" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1680.976@0.23.1680.976" timestamp="1598701281398" />
     <state x="601" y="322" width="477" height="365" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1597218106902">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="601" y="322" width="477" height="365" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.23.1680.976@0.23.1680.976" timestamp="1597218106902" />
-    <state x="720" y="122" width="735" height="627" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1597224743892">
+    <state x="720" y="122" width="735" height="627" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1598697172218">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="720" y="122" width="735" height="627" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.976@0.23.1680.976" timestamp="1597224743892" />
+    <state x="720" y="122" width="735" height="627" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.976@0.23.1680.976" timestamp="1598697172218" />
+    <state x="487" y="122" width="703" height="777" key="find.popup" timestamp="1598698222776">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="487" y="122" width="703" height="777" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1598698222776" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

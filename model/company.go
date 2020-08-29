@@ -2,29 +2,24 @@ package model
 
 import "ark/db"
 
-type Role struct {
+type Company struct {
 	Id     int64  `json:"id"`
 	Code   string `json:"code"`
 	Name   string `json:"name"`
-	Enable int    `json:"enable"`
-	Menu   string `json:"menu" xorm:"varchar"`
-	Button string `json:"button" xorm:"varchar"`
-	Other  string `json:"other" xorm:"varchar"`
+	Parent int64  `json:"parent"`
 }
 
-func AllRole() (objs []Role, err error) {
+func AllCompany() (objs []Company, err error) {
 	err = db.DBE.Find(&objs)
 	return objs, err
 }
 
-func (obj *Role) Save() error {
+func (obj *Company) Save() error {
 	var err error
 	if obj.Id > 0 {
-		// id非空判断是否已存在
-		existObj :=Role{Id:obj.Id}
-		has,_:=existObj.Has()
+		existObj := Company{Id: obj.Id}
+		has, _ := existObj.Has()
 		if has {
-			// 存在记录 按id更新
 			_, err = db.DBE.ID(existObj.Id).Update(obj)
 		} else {
 			_, err = db.DBE.Insert(obj)
@@ -37,22 +32,27 @@ func (obj *Role) Save() error {
 	return err
 }
 
-func (obj *Role) Delete() error {
+func (obj *Company) Delete() error {
 	_, err := db.DBE.ID(obj.Id).Delete(obj)
 	return err
 }
 
-func (obj *Role) Has() (has bool, err error) {
+func (obj *Company) Has() (has bool, err error) {
 	has, err = db.DBE.Get(obj)
 	return has, err
 }
 
-func (obj *Role) Find() (Objs []Role, err error) {
+func (obj *Company) Find() (Objs []Company, err error) {
 	err = db.DBE.Find(&Objs, obj)
 	return Objs, err
 }
 
-func QueryRole(v string) (objs []Role, err error) {
+func (obj *Company) FindChildren() (objs []Company, err error) {
+	err = db.DBE.Where("parent = ?", obj.Id).Find(&objs)
+	return objs, err
+}
+
+func QueryCompany(v string) (objs []Company, err error) {
 	value := "%" + v + "%"
 	err = db.DBE.Where("name like ? or code like ?", value, value).Find(&objs)
 	return objs, err
